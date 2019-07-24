@@ -15,12 +15,12 @@
         };
     };
 
-    fragment@1 {
-	target = <&spidev0>;
+    /*fragment@1 {
+	target = <&spidev1>;
 	__overlay__ {
 	    status = "disabled";
 	};
-    };
+    };*/
 
     /* the interrupt pin of the can-controller */
     fragment@2 {
