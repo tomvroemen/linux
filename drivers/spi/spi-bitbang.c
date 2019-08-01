@@ -174,7 +174,7 @@ int spi_bitbang_setup_transfer(struct spi_device *spi, struct spi_transfer *t)
 	if (!hz)
 		hz = spi->max_speed_hz;
 	if (hz) {
-		cs->nsecs = (1000000000/2) / hz;
+		cs->nsecs = ((1000000000/2) / hz)*2;
 		if (cs->nsecs > (MAX_UDELAY_MS * 1000 * 1000))
 			return -EINVAL;
 	}
