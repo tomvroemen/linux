@@ -13,7 +13,7 @@
             ranges;
             gpio-mosi = <&gpio 27 0>;
             gpio-sck = <&gpio 23 0>;
-            gpio-miso = <&gpio 22 >;
+            gpio-miso = <&gpio 12 >;
             cs-gpios = <&gpio 4 1>, <&gpio 3 1>, <&gpio 2 1>;
             num-chipselects = <3>;
             status = "ok";
