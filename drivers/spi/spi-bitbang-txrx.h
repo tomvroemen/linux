@@ -85,7 +85,7 @@ bitbang_txrx_be_cpha1(struct spi_device *spi,
 	u32 oldbit = (!(word & (1<<(bits-1)))) << 31;
 	/* clock starts at inactive polarity */
 	for (word <<= (32 - bits); likely(bits); bits--) {
-
+		spidelay(1000);
 		/* setup MSB (to slave) on leading edge */
 		setsck(spi, !cpol);
 		if ((flags & SPI_MASTER_NO_TX) == 0) {
@@ -94,10 +94,10 @@ bitbang_txrx_be_cpha1(struct spi_device *spi,
 				oldbit = word & (1 << 31);
 			}
 		}
-		spidelay(nsecs); /* T(setup) */
+		//spidelay(nsecs); /* T(setup) */
 
 		setsck(spi, cpol);
-		spidelay(nsecs);
+		spidelay(150);
 
 		/* sample MSB (from slave) on trailing edge */
 		word <<= 1;
