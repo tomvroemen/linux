@@ -11,7 +11,7 @@
             #address-cells = <1>;
             #size-cells = <0>;
             ranges;
-            gpio-mosi = <&gpio 27 0>;
+            gpio-mosi = <&gpio 25 0>;
             gpio-sck = <&gpio 23 0>;
             gpio-miso = <&gpio 12 >;
             cs-gpios = <&gpio 4 1>, <&gpio 3 1>, <&gpio 2 1>;
