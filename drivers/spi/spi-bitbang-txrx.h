@@ -61,10 +61,10 @@ bitbang_txrx_be_cpha0(struct spi_device *spi,
 				oldbit = word & (1 << 31);
 			}
 		}
-		spidelay(nsecs*4);	/* T(setup) */
+		spidelay(nsecs+400);	/* T(setup) */
 
 		setsck(spi, !cpol);
-		spidelay(nsecs*4);
+		spidelay(nsecs+400);
 
 		/* sample MSB (from slave) on leading edge */
 		word <<= 1;
@@ -94,10 +94,10 @@ bitbang_txrx_be_cpha1(struct spi_device *spi,
 				oldbit = word & (1 << 31);
 			}
 		}
-		spidelay(nsecs*4); /* T(setup) */
+		spidelay(nsecs+400); /* T(setup) */
 
 		setsck(spi, cpol);
-		spidelay(nsecs*4);
+		spidelay(nsecs+400);
 
 		/* sample MSB (from slave) on trailing edge */
 		word <<= 1;
