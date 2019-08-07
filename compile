@@ -1,7 +1,7 @@
 #! /bin/bash
 cd /linux
-KERNEL=kernel7
-make bcm2709_defconfig
+KERNEL=kernel7l
+make bcm2711_defconfig
 
 make -j4 zImage modules dtbs
 sudo make modules_install
